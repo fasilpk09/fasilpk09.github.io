@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Eg</title>
+	<script type="text/javascript"
+	src = "js/jquery.js">
+</script>
+<script type="text/javascript" language ="javascript">
+	$(document).ready(function() {
+		//alert("Hello World!");
+		$("#div1").click(function(){
+			$("#div1").slideUp("slow");
+		});
+		$("#div2").click(function(){
+			$("#div2").fadeOut("slow");
+		});
+		$("#div3").click(function(){
+			$("#div3").hide("slow");
+		});
+		$("button").click(function(){
+			$("button").animate({right:'250px'});
+			$("button").animate({left:'350px'});
+
+			$("#div1").slideDown("slow");
+			$("#div2").slideDown("slow");
+			$("#div3").slideDown("slow");
+
+		});
+
+		$("#div0").click(function(){
+			$("#and").slideDown("slow");
+			$("#php").slideDown("slow");
+		});
+
+		$("#and").click(function(){
+
+			$("#div1").slideDown("slow");
+			$("#div2").slideDown("slow");
+			$("#div3").slideDown("slow");
+			$("#div4").slideUp("slow");
+			$("#div5").slideUp("slow");
+			$("#div6").slideup("slow");
+
+
+
+		});
+		$("#php").click(function(){
+
+			$("#div1").slideUp("slow");
+			$("#div2").slideUp("slow");
+			$("#div3").slideUp("slow");
+			$("#div4").slideDown("slow");
+			$("#div5").slideDown("slow");
+			$("#div6").slideDown("slow");
+
+		});
+
+		
+	});
+
+	
+
+</script>
+</head>
+<body>
+<!--<div id ="mydiv">
+click to see a dialague box
+</div> -->
+
+
+
+<!--<h1>Hello</h1>-->
+<div type="button" id="div0" style="background-color: #ffff99;font-family: verdana;height: 100px" align="center"><h1 style="padding-top: 20px">Technologies</h1></div><br>
+
+<table align="center" cellpadding="50px">
+	<tr><td><div type="button" id="and" style="width: 250px;height: 80px;background-color: #99ffff;display: none"><h2 style="padding-top: 20px">Android</h2></div><br></td>
+	<td><div type="button" id="php" style="width: 250px;height: 80px;background-color: #99ff99;display: none"><h2 style="padding-top: 20px">PHP</h2></div><br></td></tr>
+
+
+	<tr><td><div type="button" id="div1" style="width: 80px;height: 80px;background-color: white;display: none;">Embedded Systems</div><br>
+<div type="button" id="div2" style="width: 80px;height: 80px;background-color: white;display: none;">Satellite Communications</div><br>
+<div type="button" id="div3" style="width: 80px;height: 80px;background-color: white;display: none;">Nano Tech</div><br></td>
+
+
+
+
+<td><div type="button" id="div4" style="width: 80px;height: 80px;background-color: white;display: none;">Embedded Systems</div><br>
+<div type="button" id="div5" style="width: 80px;height: 80px;background-color: white;display: none;">Satellite Communications</div><br></td></tr>
+
+</table>
+
+</body>
+</html>
