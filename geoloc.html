@@ -1,0 +1,49 @@
+<p><button onclick="geoFindMe()">Show my location</button></p>
+<div id="out"></div>
+<!--location script-->
+<script type="text/javascript">  
+
+// Stupid routing
+var mapId = location.hash.replace(/^#/, '');
+if (!mapId) {
+  mapId = (Math.random() + 1).toString(36).substring(2, 12);
+  location.hash = mapId;
+}
+</script>
+
+<script type="text/javascript">
+function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    window.alert(longitude+" and "+latitude);
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+  }
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+var myUuid = localStorage.getItem('myUuid');
+//document.write(myUuid);
+</script>
+<script type="text/javascript">
+  document.write(myUuid);
+</script>
